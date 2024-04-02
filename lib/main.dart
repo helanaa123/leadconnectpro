@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:leadconnectpro/loginPage.dart';
+import 'package:leadconnectpro/Pages/loginPage.dart';
 
 void main() {
   runApp(MyApp());

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:leadconnectpro/signupPage.dart';
+import 'package:leadconnectpro/Pages/signupPage.dart';
+import 'package:leadconnectpro/colors.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -19,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: primary,
           centerTitle: true,
           title: Text(
             'Login',
@@ -62,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     'Forgot Password?',
                     style: TextStyle(
-                      color: Colors.blue,
+                      color: textlink,
                     ),
                   ),
                 ),
@@ -72,8 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                     // Handle login
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        Colors.blueAccent, // Change the button's background color
+                    backgroundColor:primary, // Change the button's background color
                     padding: EdgeInsets.symmetric(
                         vertical: 15.0,
                         horizontal: 50.0), // Change the button's padding
@@ -146,7 +146,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     'New around here ? Sign up',
                     style: TextStyle(
-                      color: Colors.blue,
+                      color:textlink,
                       decoration: TextDecoration.underline,
                     ),
                   ),

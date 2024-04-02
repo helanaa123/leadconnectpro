@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leadconnectpro/colors.dart';
 
 
 class SignUpPage extends StatefulWidget {
@@ -33,7 +34,7 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: primary,
         centerTitle: true,
         title: Text('Sign Up',
           style: TextStyle(
@@ -107,7 +108,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   // Handle sign up
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blueAccent,
+                  backgroundColor: primary,
                   padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40.0),
@@ -129,7 +130,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 child: Text(
                   'Already have an account? Log in',
                   style: TextStyle(
-                    color: Colors.blue,
+                    color: textlink,
                     decoration: TextDecoration.underline,
                   ),
                 ),
