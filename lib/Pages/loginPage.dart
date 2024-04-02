@@ -66,7 +66,8 @@ class _LoginPageState extends State<LoginPage> {
                     // Handle login
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor:primary, // Change the button's background color
+                    backgroundColor:
+                        primary, // Change the button's background color
                     padding: EdgeInsets.symmetric(
                         vertical: 15.0,
                         horizontal: 50.0), // Change the button's padding
@@ -139,7 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     'New around here ? Sign up',
                     style: TextStyle(
-                      color:textlink,
+                      color: textlink,
                       decoration: TextDecoration.underline,
                     ),
                   ),

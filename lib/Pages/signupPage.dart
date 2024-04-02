@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:leadconnectpro/Pages/homePage.dart';
+import 'package:leadconnectpro/Pages/loginPage.dart';
 import 'package:leadconnectpro/Widgets/widgets.dart';
 import 'package:leadconnectpro/colors.dart';
-
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -62,7 +63,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   labelText: 'Password',
                   border: OutlineInputBorder(),
                   suffixIcon: IconButton(
-                    icon: Icon(_isPasswordVisible ? Icons.visibility : Icons.visibility_off),
+                    icon: Icon(_isPasswordVisible
+                        ? Icons.visibility
+                        : Icons.visibility_off),
                     onPressed: _togglePasswordVisibility,
                   ),
                 ),
@@ -74,7 +77,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   labelText: 'Confirm Password',
                   border: OutlineInputBorder(),
                   suffixIcon: IconButton(
-                    icon: Icon(_isConfirmPasswordVisible ? Icons.visibility : Icons.visibility_off),
+                    icon: Icon(_isConfirmPasswordVisible
+                        ? Icons.visibility
+                        : Icons.visibility_off),
                     onPressed: _toggleConfirmPasswordVisibility,
                   ),
                 ),
@@ -97,11 +102,16 @@ class _SignUpPageState extends State<SignUpPage> {
               SizedBox(height: 50.0),
               ElevatedButton(
                 onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
                   // Handle sign up
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: primary,
-                  padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
+                  padding:
+                      EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40.0),
                   ),
@@ -117,6 +127,10 @@ class _SignUpPageState extends State<SignUpPage> {
               SizedBox(height: 100.0),
               GestureDetector(
                 onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
                   // Handle text link action
                 },
                 child: Text(

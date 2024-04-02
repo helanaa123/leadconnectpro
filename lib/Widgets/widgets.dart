@@ -4,8 +4,6 @@ import 'package:leadconnectpro/colors.dart';
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
 
-
-
   const MyAppBar({Key? key, required this.title}) : super(key: key);
 
   @override
@@ -41,18 +39,18 @@ class MyBottomNavigationBar extends StatelessWidget {
     return BottomNavigationBar(
       items: [
         BottomNavigationBarItem(
-          icon: Icon(Icons.home,
-            size: 35.0,),
+          icon: Icon(
+            Icons.home,
+            size: 35.0,
+          ),
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.contacts,
-              size: 30.0),
+          icon: Icon(Icons.contacts, size: 30.0),
           label: 'Contacts',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.settings,
-              size: 35.0),
+          icon: Icon(Icons.settings, size: 35.0),
           label: 'Settings',
         ),
       ],
@@ -63,4 +61,3 @@ class MyBottomNavigationBar extends StatelessWidget {
     );
   }
 }
-

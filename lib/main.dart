@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:leadconnectpro/Pages/homePage.dart';
+import 'package:leadconnectpro/Pages/signupPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,9 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: SignUpPage(),
     );
   }
 }
-
-

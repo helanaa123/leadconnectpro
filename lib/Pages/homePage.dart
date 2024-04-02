@@ -16,6 +16,10 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void _onCameraIconPressed() {
+    // Handle camera icon press
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,14 +65,18 @@ class _HomePageState extends State<HomePage> {
           Center(
             child: Column(
               children: <Widget>[
-                Icon(
-                  Icons.camera_alt_rounded,
-                  color: icongrey,
-                  size: 150.0,
+                GestureDetector(
+                  onTap: _onCameraIconPressed,
+                  child: Icon(
+                    Icons.camera_alt_rounded,
+                    color: icongrey,
+                    size: 150.0,
+                  ),
                 ),
                 Text(
                   'Scan Your Card',
-                  style: TextStyle(fontSize: 24.0,
+                  style: TextStyle(
+                      fontSize: 24.0,
                       color: icongrey,
                       fontWeight: FontWeight.bold),
                 ),
