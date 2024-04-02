@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leadconnectpro/Widgets/widgets.dart';
 import 'package:leadconnectpro/colors.dart';
 
 
@@ -33,16 +34,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: primary,
-        centerTitle: true,
-        title: Text('Sign Up',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white
-          ),
-        ),
-      ),
+      appBar: MyAppBar(title: 'SignUp'),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
