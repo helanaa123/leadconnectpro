@@ -3,3 +3,5 @@ import 'package:flutter/material.dart';
 Color primary = Color.fromARGB(255, 68, 114, 196);
 Color secondary = Colors.white;
 Color textlink = Color.fromARGB(255, 69, 165, 254);
+Color icongrey = Color.fromARGB(255, 183, 183, 183);
+
