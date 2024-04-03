@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:leadconnectpro/services/ocr_services.dart';
 import '../colors.dart';
 import 'package:leadconnectpro/Widgets/widgets.dart';
 
@@ -8,6 +11,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _ocrService = OCRService();
+  String _extractedText = '';
+  final _picker = ImagePicker();
   int _currentIndex = 0;
 
   void _onItemTapped(int index) {
@@ -16,8 +22,18 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  void _onCameraIconPressed() {
-    // Handle camera icon press
+  Future<void> _scanImage() async {
+    final XFile? image = await _picker.pickImage(source: ImageSource.camera);
+    if (image != null) {
+      String text = await _ocrService.extractTextFromImage(image);
+      setState(() {
+        _extractedText = text;
+      });
+    }
+  }
+  void dispose() {
+    _ocrService.dispose();
+    super.dispose();
   }
 
   @override
@@ -66,19 +82,25 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: <Widget>[
                 GestureDetector(
-                  onTap: _onCameraIconPressed,
-                  child: Icon(
-                    Icons.camera_alt_rounded,
-                    color: icongrey,
-                    size: 150.0,
+                  onTap: _scanImage,
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Icon(
+                          Icons.camera_alt_rounded,
+                          color: icongrey,
+                          size: 150.0,
+                        ),
+                        Text(
+                          'Scan Your Card',
+                          style: TextStyle(
+                              fontSize: 24.0,
+                              color: icongrey,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                Text(
-                  'Scan Your Card',
-                  style: TextStyle(
-                      fontSize: 24.0,
-                      color: icongrey,
-                      fontWeight: FontWeight.bold),
                 ),
               ],
             ),
